@@ -1,0 +1,16 @@
+name: hydrosat-geospatial-project
+channels:
+  - conda-forge
+dependencies:
+  - python=3.9
+  - dagster
+  - dagit
+  - geopandas
+  - rasterio
+  - boto3
+  - pandas
+  - matplotlib
+  - requests
+  - pip
+  - pip:
+      - conda-lock
