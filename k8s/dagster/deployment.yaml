@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dagster
+  labels:
+    app: dagster
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dagster
+  template:
+    metadata:
+      labels:
+        app: dagster
+    spec:
+      containers:
+      - name: dagster
+        image: dagster/dagit:latest  
+        ports:
+          - containerPort: 3000
+        envFrom:
+          - configMapRef:
+              name: dagster-config
+
+
